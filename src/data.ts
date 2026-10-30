@@ -1,6 +1,6 @@
 // All restaurant content lives here: dishes, menu, gallery, reviews and contact details.
 // Photos are Unsplash photo ids (the last part of an unsplash.com/photos/... link).
-// To use your own photo instead, put a full image URL or a file in /public in `photo`.
+// Our own photos live in public/photos/ and are written as 'photos/<file>.jpg'.
 
 export type Spice = 'Mild' | 'Medium' | 'Hot' | '';
 
@@ -29,12 +29,12 @@ export const restaurant = {
   ],
 };
 
-export const heroPhoto = 'ysmeQt1dzcw';
+export const heroPhoto = 'photos/kacchi-handi.jpg';
 
 export const signatures: Dish[] = [
-  { id: 'kacchi', tag: 'Bestseller', bn: 'কাচ্চি বিরিয়ানি', name: 'Mutton kacchi biryani', price: 890, photo: 'zVT0sPIo58g', desc: 'Marinated mutton and aromatic rice sealed in the handi and slow-cooked on charcoal.' },
+  { id: 'kacchi', tag: 'Bestseller', bn: 'কাচ্চি বিরিয়ানি', name: 'Kacchi biryani', price: 890, photo: 'photos/biryani-bowl.jpg', desc: 'Mutton or chicken marinated overnight, sealed in the handi with aloo and slow-cooked on charcoal.' },
   { id: 'ilish', tag: 'Seasonal', bn: 'সর্ষে ইলিশ', name: 'Shorshe ilish', price: 1250, photo: 'tklxd4BUWBs', desc: 'Padma hilsa steamed in fresh mustard paste, green chilli and mustard oil.' },
-  { id: 'kalabhuna', tag: 'Chittagong style', bn: 'কালা ভুনা', name: 'Beef kala bhuna', price: 780, photo: 'eEWlcfydzQ4', desc: 'Beef slow-fried for hours until dark, rich and tender, with whole spices.' },
+  { id: 'kalabhuna', tag: 'Chittagong style', bn: 'কালা ভুনা', name: 'Beef kala bhuna', price: 780, photo: 'photos/kala-bhuna.jpg', desc: 'Beef slow-fried for hours until dark, rich and tender, with whole spices.' },
   { id: 'rezala', tag: 'Mughlai', bn: 'মাটন রেজালা', name: 'Mutton rezala', price: 850, photo: '3OMLWzkkt0Y', desc: 'Silky yoghurt and cashew gravy, kewra and fried onion.' },
   { id: 'malai', tag: 'Chef’s pick', bn: 'চিংড়ি মালাই কারি', name: 'Chingri malai curry', price: 1150, photo: 'tWkA48kabZE', desc: 'Golda prawns simmered in a gentle coconut-milk curry.' },
 ];
@@ -51,25 +51,25 @@ export type MenuTab = (typeof menuTabs)[number]['id'];
 
 export const menu: Record<MenuTab, Dish[]> = {
   biryani: [
-    { id: 'kacchi', bn: 'কাচ্চি বিরিয়ানি', name: 'Mutton kacchi biryani', desc: 'Our signature, with aloo and a glass of borhani', price: 890, spice: 'Medium', photo: 'zVT0sPIo58g' },
-    { id: 'tehari', bn: 'বিফ তেহারি', name: 'Beef tehari', desc: 'Old-Dhaka style, mustard oil and green chilli', price: 520, spice: 'Medium', photo: 'hEeA50ZHo4o' },
-    { id: 'polao', bn: 'মোরগ পোলাও', name: 'Morog polao', desc: 'Fragrant polao with a whole leg of chicken', price: 620, spice: 'Mild', photo: 'qykaahjNbgA' },
+    { id: 'kacchi', bn: 'কাচ্চি বিরিয়ানি', name: 'Kacchi biryani', desc: 'Our signature, with aloo, egg and a glass of borhani', price: 890, spice: 'Medium', photo: 'photos/kacchi-handi.jpg' },
+    { id: 'tehari', bn: 'বিফ তেহারি', name: 'Beef tehari', desc: 'Old-Dhaka style, mustard oil and green chilli', price: 520, spice: 'Medium', photo: 'photos/tehari.jpg' },
+    { id: 'polao', bn: 'মোরগ পোলাও', name: 'Morog polao', desc: 'Fragrant polao with a whole leg of chicken', price: 620, spice: 'Mild', photo: 'photos/morog-polao.jpg' },
     { id: 'khichuri', bn: 'ভুনা খিচুড়ি', name: 'Bhuna khichuri', desc: 'With beef bhuna and a fried egg — a rainy-day classic', price: 480, spice: 'Medium', photo: 'I7-ORDdavFk' },
   ],
   curries: [
-    { id: 'kalabhuna', bn: 'কালা ভুনা', name: 'Beef kala bhuna', desc: 'Slow-fried until dark and tender', price: 780, spice: 'Hot', photo: 'eEWlcfydzQ4' },
+    { id: 'kalabhuna', bn: 'কালা ভুনা', name: 'Beef kala bhuna', desc: 'Slow-fried until dark and tender', price: 780, spice: 'Hot', photo: 'photos/kala-bhuna.jpg' },
     { id: 'rezala', bn: 'মাটন রেজালা', name: 'Mutton rezala', desc: 'Yoghurt, cashew and kewra', price: 850, spice: 'Mild', photo: '3OMLWzkkt0Y' },
     { id: 'ilish', bn: 'সর্ষে ইলিশ', name: 'Shorshe ilish', desc: 'Hilsa in fresh mustard paste', price: 1250, spice: 'Medium', photo: 'tklxd4BUWBs' },
-    { id: 'roast', bn: 'চিকেন রোস্ট', name: 'Wedding-style chicken roast', desc: 'Sweet-spiced, rich and buttery', price: 520, spice: 'Mild', photo: 'tsQhEvzU6MQ' },
+    { id: 'roast', bn: 'চিকেন রোস্ট', name: 'Wedding-style chicken roast', desc: 'Sweet-spiced, rich and buttery', price: 520, spice: 'Mild', photo: 'photos/chicken-roast.jpg' },
   ],
   starters: [
     { id: 'fuchka', bn: 'ফুচকা', name: 'Fuchka', desc: 'Crisp shells, spiced potato and tamarind water', price: 250, spice: 'Medium', photo: 'KPC-IA1-ZaA' },
     { id: 'chotpoti', bn: 'চটপটি', name: 'Chotpoti', desc: 'Yellow peas, egg, tamarind and onion', price: 220, spice: 'Medium', photo: '_sfMD-OhFR8' },
     { id: 'shami', bn: 'শামি কাবাব', name: 'Shami kebab', desc: 'Minced beef and lentil patties, mint chutney', price: 320, spice: 'Mild', photo: 'n0zK35d967w' },
-    { id: 'reshmi', bn: 'রেশমি কাবাব', name: 'Chicken reshmi kebab', desc: 'Creamy, charcoal-grilled skewers', price: 480, spice: 'Mild', photo: 'FOZbF67e-DE' },
+    { id: 'chickenfry', bn: 'ঝাল চিকেন ফ্রাই', name: 'Jhal chicken fry', desc: 'Crispy chicken tossed with green chilli, onion and curry leaves', price: 420, spice: 'Hot', photo: 'photos/jhal-chicken-fry.jpg' },
   ],
   desserts: [
-    { id: 'kalojam', bn: 'কালোজাম', name: 'Kalojam', desc: 'Warm milk dumplings in cardamom syrup', price: 200, photo: '2oJ4eGRPqrE' },
+    { id: 'kalojam', bn: 'কালোজাম', name: 'Kalojam', desc: 'Warm milk dumplings in cardamom syrup', price: 200, photo: 'photos/kalojam.jpg' },
     { id: 'shahitukra', bn: 'শাহী টুকরা', name: 'Shahi tukra', desc: 'Fried bread, saffron rabri and pistachio', price: 350, photo: 'uwu2ZLDmX8k' },
     { id: 'mishtidoi', bn: 'মিষ্টি দই', name: 'Mishti doi', desc: 'Bogura-style sweet yoghurt', price: 180, photo: 'jFTgZ4P7ATU' },
     { id: 'custard', bn: 'ফ্রুট কাস্টার্ড', name: 'Fruit custard', desc: 'Vanilla custard with seasonal fruit', price: 250, photo: '86Xd_vAyFv4' },
@@ -83,7 +83,7 @@ export const menu: Record<MenuTab, Dish[]> = {
 };
 
 export const story = {
-  photos: ['Wj-JhBwtXVY', 'vsnAIYA9bms', '7a--Ad6mkNE'],
+  photos: ['Wj-JhBwtXVY', 'photos/biryani-bowl.jpg', 'photos/chicken-fry-top.jpg'],
   pillars: [
     { title: 'Dum on charcoal', body: 'Biryani sealed under a dough lid and slow-cooked the traditional way.' },
     { title: 'Spices ground daily', body: 'Whole spices roasted and ground in our kitchen every morning.' },
@@ -97,12 +97,12 @@ export const story = {
 };
 
 export const gallery = [
-  { photo: 'vsnAIYA9bms', caption: 'A full table, the Bengali way' },
-  { photo: 'Wj-JhBwtXVY', caption: 'Low and slow on the stove' },
-  { photo: 'KPC-IA1-ZaA', caption: 'Street-food spirit' },
-  { photo: 'Wzo_34cS5bA', caption: 'The dining room at night' },
-  { photo: '0hnVMVaDaNM', caption: 'Kebabs off the grill' },
-  { photo: 'T8iKgDAvRrg', caption: 'Sweets for the road' },
+  { photo: 'photos/kacchi-handi.jpg', caption: 'A full table, the Bengali way' },
+  { photo: 'photos/tehari.jpg', caption: 'Tehari with fresh salad' },
+  { photo: 'photos/jhal-chicken-fry.jpg', caption: 'Jhal chicken fry' },
+  { photo: 'photos/dining-room.jpg', caption: 'The dining room at night' },
+  { photo: 'photos/chicken-fry-plate.jpg', caption: 'Hot off the fryer' },
+  { photo: 'photos/kalojam.jpg', caption: 'Kalojam, warm from the syrup' },
 ];
 
 export const reviews = [
@@ -112,4 +112,4 @@ export const reviews = [
   { name: 'Imran H.', place: 'Uttara', text: 'Kala bhuna with plain polao is worth the drive across town. Generous portions, fair prices.' },
 ];
 
-export const reservePhoto = 'Wzo_34cS5bA';
+export const reservePhoto = 'photos/dining-room.jpg';

@@ -12,7 +12,8 @@ Without my written permission you may NOT:
 
 Open-source packages used by this project keep their own licences (see
 package.json and their documentation); this notice covers only my own work.
-The food and venue photos are loaded from Unsplash (unsplash.com) under the
+Photos in public/photos/ are used with permission and are not covered by this
+notice. Other photos are loaded from Unsplash (unsplash.com) under the
 Unsplash License and belong to their photographers.
 
 Want to use this work, or hire me to build something similar?

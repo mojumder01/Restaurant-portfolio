@@ -127,7 +127,7 @@ function Hero() {
           </text>
         </svg>
         <div className="float absolute inset-[13%]">
-          <Photo photo={heroPhoto} alt="Mutton kacchi biryani served in a bowl" width={1000} eager className="h-full w-full rounded-full shadow-[0_40px_80px_-30px_rgba(90,45,15,.6)]" />
+          <Photo photo={heroPhoto} alt="Kacchi biryani in a steel handi with borhani, salad and sides, top view" width={1000} eager className="h-full w-full rounded-full shadow-[0_40px_80px_-30px_rgba(90,45,15,.6)]" />
           <svg className="absolute -top-10 left-1/2 h-14 w-24 -translate-x-1/2" viewBox="0 0 96 56" aria-hidden="true">
             {[22, 48, 74].map((x, i) => <path key={x} className="steam" style={{ animationDelay: `${i * 0.6}s` }} d={`M${x} 54 C ${x - 10} 40, ${x + 10} 30, ${x} 14`} fill="none" stroke="#C9A27A" strokeWidth="2.4" strokeLinecap="round" />)}
           </svg>
@@ -228,12 +228,12 @@ function Story() {
           </Reveal>
           <Reveal delay={0.15} className="absolute right-0 top-0 w-[46%]">
             <div className="float-slow rotate-[3deg] rounded-3xl border-[7px] border-white shadow-[0_30px_60px_-30px_rgba(60,35,15,.6)]">
-              <Photo photo={b} alt="A table of bowls of curries and sauces" width={600} className="h-[200px] rounded-[18px] sm:h-[240px]" />
+              <Photo photo={b} alt="Chicken biryani in a white bowl" width={600} className="h-[200px] rounded-[18px] sm:h-[240px]" />
             </div>
           </Reveal>
           <Reveal delay={0.3} className="absolute bottom-0 right-[6%] w-[52%]">
             <div className="float rotate-[2deg] rounded-3xl border-[7px] border-white shadow-[0_30px_60px_-30px_rgba(60,35,15,.6)]" style={{ animationDelay: '2s' }}>
-              <Photo photo={c} alt="Rice and curries served on a steel tray" width={600} className="h-[190px] rounded-[18px] sm:h-[220px]" />
+              <Photo photo={c} alt="Spicy fried chicken on a black plate" width={600} className="h-[190px] rounded-[18px] sm:h-[220px]" />
             </div>
           </Reveal>
           <div className="spin absolute bottom-6 left-4 flex h-28 w-28 items-center justify-center rounded-full bg-clay text-center text-white shadow-xl" aria-hidden="true">

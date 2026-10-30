@@ -23,7 +23,7 @@ React 19, TypeScript, Tailwind CSS 4, Vite. No backend.
 ## Edit the content
 
 Everything (dishes, prices, photos, reviews, address, opening hours) is in [`src/data.ts`](src/data.ts).
-A photo is either an Unsplash photo id or a full image link, so you can swap in your own photos there.
+A photo is either a file in `public/photos/` (written as `photos/<file>.jpg`) or an Unsplash photo id.
 
 ## Run it locally
 
@@ -39,4 +39,4 @@ One-time setup: **Settings → Pages → Source: GitHub Actions**.
 
 ## Licence
 
-© Md Muntasir Mamun Mojumder. All rights reserved — see [LICENSE](LICENSE). Photos are from [Unsplash](https://unsplash.com) under the Unsplash License.
+© Md Muntasir Mamun Mojumder. All rights reserved — see [LICENSE](LICENSE). Photos in `public/photos/` are used with permission; the rest come from [Unsplash](https://unsplash.com) under the Unsplash License.
