@@ -55,21 +55,23 @@ function Header() {
   }, [open]);
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? 'bg-cream/85 shadow-[0_10px_30px_-20px_rgba(60,35,15,.5)] backdrop-blur-md' : ''}`}>
-      <div className={`mx-auto flex max-w-[1240px] items-center justify-between gap-5 px-5 transition-all duration-500 sm:px-8 ${scrolled ? 'py-3' : 'py-6'}`}>
-        <a href="#top" aria-label="Aurelia, back to top" className="text-ink no-underline"><Logo /></a>
-        <nav aria-label="Main" className="hidden items-center gap-8 text-[13px] font-semibold uppercase tracking-[2px] lg:flex">
-          {nav.map((n) => <a key={n.href} href={n.href} className="ul pb-1 text-ink-soft no-underline">{n.label}</a>)}
-        </nav>
-        <div className="flex items-center gap-3">
-          <a href="#reserve" className="hidden rounded-full bg-clay px-6 py-3.5 text-[13px] font-bold uppercase tracking-[2px] text-white no-underline transition hover:-translate-y-0.5 hover:bg-clay-dark hover:shadow-[0_12px_30px_-10px_rgba(168,72,31,.6)] sm:inline-block">Reserve a table</a>
-          <button type="button" onClick={() => setOpen(true)} aria-label="Open menu" aria-expanded={open} className="flex h-12 w-12 items-center justify-center rounded-full border-[1.5px] border-line bg-white lg:hidden">
-            <MenuIcon size={20} aria-hidden="true" />
-          </button>
+    <>
+      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? 'bg-cream/85 shadow-[0_10px_30px_-20px_rgba(60,35,15,.5)] backdrop-blur-md' : ''}`}>
+        <div className={`mx-auto flex max-w-[1240px] items-center justify-between gap-5 px-5 transition-all duration-500 sm:px-8 ${scrolled ? 'py-3' : 'py-6'}`}>
+          <a href="#top" aria-label="Aurelia, back to top" className="text-ink no-underline"><Logo /></a>
+          <nav aria-label="Main" className="hidden items-center gap-8 text-[13px] font-semibold uppercase tracking-[2px] lg:flex">
+            {nav.map((n) => <a key={n.href} href={n.href} className="ul pb-1 text-ink-soft no-underline">{n.label}</a>)}
+          </nav>
+          <div className="flex items-center gap-3">
+            <a href="#reserve" className="hidden rounded-full bg-clay px-6 py-3.5 text-[13px] font-bold uppercase tracking-[2px] text-white no-underline transition hover:-translate-y-0.5 hover:bg-clay-dark hover:shadow-[0_12px_30px_-10px_rgba(168,72,31,.6)] sm:inline-block">Reserve a table</a>
+            <button type="button" onClick={() => setOpen(true)} aria-label="Open menu" aria-expanded={open} className="flex h-12 w-12 items-center justify-center rounded-full border-[1.5px] border-line bg-white lg:hidden">
+              <MenuIcon size={20} aria-hidden="true" />
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
-      <div role="dialog" aria-modal="true" aria-label="Site menu" className={`fixed inset-0 z-50 flex flex-col bg-cream px-6 py-6 transition-all duration-500 lg:hidden ${open ? 'visible opacity-100' : 'invisible opacity-0'}`}>
+      <div role="dialog" aria-modal="true" aria-label="Site menu" className={`fixed inset-0 z-[60] flex flex-col bg-cream px-6 py-6 transition-all duration-500 lg:hidden ${open ? 'visible opacity-100' : 'invisible opacity-0'}`}>
         <div className="flex items-center justify-between">
           <Logo />
           <button type="button" onClick={() => setOpen(false)} aria-label="Close menu" className="flex h-12 w-12 items-center justify-center rounded-full border-[1.5px] border-line bg-white"><X size={20} aria-hidden="true" /></button>
@@ -81,7 +83,7 @@ function Header() {
         </nav>
         <a href="#reserve" onClick={() => setOpen(false)} className="mt-auto rounded-full bg-clay py-4 text-center text-sm font-bold uppercase tracking-[2px] text-white no-underline">Reserve a table</a>
       </div>
-    </header>
+    </>
   );
 }
 
@@ -97,7 +99,7 @@ function Hero() {
         {petals.map((p, i) => <span key={i} className="petal" style={{ left: p.left, animationDelay: p.delay, background: p.color }} />)}
       </div>
       <div className="relative z-10 min-w-0 flex-[1_1_440px]">
-        <p className="rise mb-5 text-xs font-bold uppercase tracking-[4px] text-clay sm:text-[13px] sm:tracking-[5px]" style={{ animationDelay: '.15s' }}>Authentic Bengali &amp; Mughlai · {restaurant.area}</p>
+        <p className="rise mb-5 text-xs font-bold uppercase tracking-[4px] text-clay sm:text-[13px] sm:tracking-[5px]" style={{ animationDelay: '.15s' }}>Authentic Bengali &amp; Mughlai <span className="whitespace-nowrap">· {restaurant.area}</span></p>
         <h1 className="font-serif text-[clamp(56px,7.4vw,108px)] font-medium leading-[.94] tracking-[-1px]">
           <span className="rise block" style={{ animationDelay: '.35s' }}>Where fire</span>
           <span className="rise block" style={{ animationDelay: '.55s' }}>meets <em className="text-clay">flavour</em></span>
@@ -137,7 +139,7 @@ function Hero() {
           <p className="mt-0.5 font-serif text-xl font-semibold">Mutton kacchi</p>
           <p className="text-xs text-muted">Ready at 12:30 · 40 plates</p>
         </div>
-        <div className="float absolute -right-1 top-[14%] flex items-center gap-3 rounded-full bg-ink py-2 pl-2 pr-5 text-cream shadow-[0_20px_40px_-20px_rgba(36,28,21,.8)]" style={{ animationDelay: '1.5s' }}>
+        <div className="float absolute right-0 top-[14%] sm:-right-1 flex items-center gap-3 rounded-full bg-ink py-2 pl-2 pr-5 text-cream shadow-[0_20px_40px_-20px_rgba(36,28,21,.8)]" style={{ animationDelay: '1.5s' }}>
           <span className="flex h-9 w-9 items-center justify-center rounded-full bg-saffron text-ink"><Flame size={18} aria-hidden="true" /></span>
           <span className="text-sm font-bold">Charcoal dum</span>
         </div>
@@ -373,7 +375,7 @@ function Gallery() {
               <button type="button" onClick={() => setOpen(i)} aria-label={`Open photo: ${g.caption}`} className="block h-full w-full">
                 <Photo photo={g.photo} alt={g.caption} width={i === 0 ? 1200 : 700} className="zoom h-full w-full" />
                 <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 transition group-hover:opacity-100" />
-                <figcaption className="absolute bottom-4 left-5 right-5 text-left font-serif text-xl italic text-white transition duration-500 group-hover:-translate-y-1">{g.caption}</figcaption>
+                <figcaption className="absolute bottom-3 left-4 right-4 text-left font-serif text-base italic leading-snug sm:bottom-4 sm:left-5 sm:right-5 sm:text-xl text-white transition duration-500 group-hover:-translate-y-1">{g.caption}</figcaption>
               </button>
             </Reveal>
           ))}
@@ -446,7 +448,8 @@ function Reserve() {
     if (Object.keys(err).length === 0) setDone(true);
   };
 
-  const field = 'mt-2 w-full font-medium normal-case tracking-normal rounded-2xl border-[1.5px] border-line bg-cream px-4 py-3.5 text-[15px] text-ink outline-none transition focus:border-clay focus:bg-white';
+  const fieldBase = 'mt-2 w-full font-medium normal-case tracking-normal rounded-2xl border-[1.5px] border-line bg-cream py-3.5 text-[15px] text-ink outline-none transition focus:border-clay focus:bg-white';
+  const field = `${fieldBase} px-4`;
   const label = 'block text-[11px] font-extrabold uppercase tracking-[2px] text-ink-soft';
   const nice = new Date(form.date + 'T00:00').toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
 
@@ -454,7 +457,7 @@ function Reserve() {
     <section id="reserve" className="mx-auto max-w-[1240px] px-5 pb-28 sm:px-8">
       <Reveal className="grid overflow-hidden rounded-[36px] bg-white shadow-[0_40px_80px_-50px_rgba(60,35,15,.6)] lg:grid-cols-[1fr_1.1fr]">
         <div className="relative min-h-[320px]">
-          <Photo photo={reservePhoto} alt="Aurelia’s dining room in the evening" width={1000} className="absolute inset-0" />
+          <div className="absolute inset-0"><Photo photo={reservePhoto} alt="Aurelia’s dining room in the evening" width={1000} className="h-full w-full" /></div>
           <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
           <div className="relative flex h-full flex-col justify-end p-8 text-cream sm:p-10">
             <span className="w-fit rounded-full bg-saffron px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[2px] text-ink">Every Friday</span>
@@ -490,10 +493,10 @@ function Reserve() {
                 </label>
                 <div className="grid grid-cols-2 gap-4">
                   <label className={label}>Time
-                    <select className={field} value={form.time} onChange={set('time')}>{times.map((t) => <option key={t}>{t}</option>)}</select>
+                    <select className={`${fieldBase} px-3`} value={form.time} onChange={set('time')}>{times.map((t) => <option key={t}>{t}</option>)}</select>
                   </label>
                   <label className={label}>Guests
-                    <select className={field} value={form.guests} onChange={set('guests')}>{['1', '2', '3', '4', '5', '6', '8', '10+'].map((g) => <option key={g}>{g}</option>)}</select>
+                    <select className={`${fieldBase} px-3`} value={form.guests} onChange={set('guests')}>{['1', '2', '3', '4', '5', '6', '8', '10+'].map((g) => <option key={g}>{g}</option>)}</select>
                   </label>
                 </div>
                 <label className={`${label} sm:col-span-2`}>Special request <span className="font-semibold normal-case tracking-normal text-faint">(optional)</span>
@@ -532,9 +535,11 @@ function Footer() {
           <p className="leading-loose"><a className="ul text-ink no-underline" href={restaurant.phoneHref}>{restaurant.phone}</a><br /><a className="ul text-ink no-underline" href={`mailto:${restaurant.email}`}>{restaurant.email}</a></p>
         </div>
       </div>
-      <div className="mx-auto mt-16 flex max-w-[1240px] flex-wrap justify-between gap-3 border-t border-line px-5 pt-6 text-xs text-muted sm:px-8">
-        <p>© {new Date().getFullYear()} Aurelia · A demo website designed and built by <a className="font-bold text-clay" href="https://mojumder01.github.io/muntasir_Portfolio/">Md Muntasir Mamun Mojumder</a></p>
-        <p>Photos from <a className="text-clay" href="https://unsplash.com" target="_blank" rel="noreferrer">Unsplash</a></p>
+      <div className="mx-auto mt-16 max-w-[1240px] px-5 sm:px-8">
+        <div className="flex flex-wrap justify-between gap-3 border-t border-line pt-6 text-xs text-muted">
+          <p>© {new Date().getFullYear()} Aurelia · A demo website designed and built by <a className="font-bold text-clay" href="https://mojumder01.github.io/muntasir_Portfolio/">Md Muntasir Mamun Mojumder</a></p>
+          <p>Photos: Aurelia &amp; <a className="text-clay" href="https://unsplash.com" target="_blank" rel="noreferrer">Unsplash</a></p>
+        </div>
       </div>
     </footer>
   );
